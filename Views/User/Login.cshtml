@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "computer";
+    Layout = "_Empty";
+}
+
+<h1 style="display: flex; justify-content: center; align-items: center; font-size: 150px; margin-top: 205px;">@Model.Image</h1>
+@model User
+@await Html.PartialAsync("_LogForm", new LogUser(){UserId = Model.UserId})
+
+<style>
+    body {
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0d9d7c6-746c-4ffd-a882-292695a2ceb1/dgv31ox-d37e3e4a-9c36-4f62-84e8-ce7fd75894b9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MwZDlkN2M2LTc0NmMtNGZmZC1hODgyLTI5MjY5NWEyY2ViMVwvZGd2MzFveC1kMzdlM2U0YS05YzM2LTRmNjItODRlOC1jZTdmZDc1ODk0YjkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.p2Pxi1SpkO6qHuRkPRQZyt7NcYzogmU5N_7qrAQn41U');
+        background-size: cover;
+        background-position: center;
+    }
+    .back {
+        position: absolute;
+        top: 15px;
+        left: 40px;
+        width: 31px;
+        height: 31px;
+    }
+</style>
+
+<a asp-action="LogAndReg" asp-controller="User">
+    <img src="https://preview.redd.it/whistler-xp-icons-redesigned-see-captions-v0-0u05lpyyffnc1.png?width=640&crop=smart&auto=webp&s=7f2276b769212d4621dada49eb1932abfd60a940" class="back" />
+</a>

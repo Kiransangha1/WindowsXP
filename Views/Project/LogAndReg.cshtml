@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "computer";
+    Layout = "_Empty";
+}
+
+<style>
+    body {
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/c0bd4a43-0e20-4bc5-b845-a33b8ad62933/d2tbbbl-591fc5c2-ab6a-460b-8d70-00af74277288.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .button {
+        margin-top: 0px;
+        margin-left: 430px;
+        padding-left: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 40px;
+        height: 25px;
+        font-size: 14px;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        border: 1px solid #6e89ab;
+    }
+
+    .box {
+        border-radius: 10px;
+        text-align: center;
+        width: 60%;
+        margin-left: 550px;
+        background-image: linear-gradient(to left, rgba(255,0,0,0), #183ba9);
+        padding: 0px;
+    }
+
+    .box:first-child {
+        margin-top: 100px;
+    }
+
+    .logo {
+        font-size: 90px;
+        margin-top: 50px;
+    }
+
+    .text {
+        color: white;
+    }
+</style>
+
+@model List<User>
+@foreach (var u in Model)
+{
+    <div>
+        <div class="col-6">
+            <a asp-route-UserId="@u.UserId" asp-controller="User" asp-action="Login">
+                <div class=box>
+                    <p class="logo">@u.Image</p>
+                    <p class="text">@u.Name</p>
+            <div>
+                <form asp-route-userId="@u.UserId" asp-action="DeleteUser" asp-controller="User" method="Post">
+                    <button>
+                        <img src="https://www.eightforums.com/attachments/recycle_bin_empty-png.40964/" alt="Delete"
+                            style="width: 20px; height: 20px;">
+                    </button>
+                </form>
+            </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+}
+
+<a asp-controller="User" asp-action="Register">
+    <div class="button">+</div>
+</a>

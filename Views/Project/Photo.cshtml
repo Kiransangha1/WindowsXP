@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "photo";
+    Layout = "_Empty";
+}
+
+<style>
+    body {
+        background-image: url('https://i.redd.it/evolution-of-picture-folder-thumbnails-v0-hk1gcsxyv5y91.png?width=792&format=png&auto=webp&s=b613b2f7510f1eaaa252e79a3c470aab14cc0770');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cover {
+        position: absolute;
+        top: 135px;
+        left: 20px;
+        width: 97%;
+        height: 507px;
+        background-color: rgba(252, 252, 252, 255);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .button {
+        margin-top: 4.5%;
+        margin-left: 83%;
+    }
+
+</style>
+<a asp-action="DesktopPage">
+    <div>
+        <img style="font: 100px; height: 24px; width: 57px; margin-left: 99.5%; margin-top: 13px; border-radius: 0px"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZALotUkFOOV13iv-KnhMhC2Amsr49Ruh6yRKEYGoDXOpOibGNdvx0VuKiz68K_W9sUA&usqp=CAU" />
+    </div>
+</a>
+<a asp-controller="XP" asp-action="AddPhoto">
+    <button class="button">+</button>
+</a>
+
+<div class="cover">
+    @model List<Photo>
+    @foreach (var p in Model)
+    {
+        <div>
+            <img src="@p.ImgURL">
+            <p>@p.Title</p>
+        </div>
+
+    <form asp-route-photoId="@p.PhotoId" asp-action="DeletePhoto" asp-controller="XP" method="Post">
+    <button>
+    <img src="https://www.eightforums.com/attachments/recycle_bin_empty-png.40964/" alt="Delete"
+    style="width: 20px; height: 20px;">
+    </button>
+    </form>
+    }
+
+</div>

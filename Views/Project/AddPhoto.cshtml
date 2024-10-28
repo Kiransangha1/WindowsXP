@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Add photo";
+    Layout = "_Empty";
+}
+<a asp-action="Photo">
+    <div>
+        <img style="font: 100px; height: 63px; width: 75px; margin-left: 90.1%; margin-top: 130px; border-radius: 0px"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZALotUkFOOV13iv-KnhMhC2Amsr49Ruh6yRKEYGoDXOpOibGNdvx0VuKiz68K_W9sUA&usqp=CAU" />
+    </div>
+</a>
+
+<style>
+    body {
+        background-image: url('https://cdn.foliovision.com/images/2013/05/Run-Performance-Monitor.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .cover {
+        position: absolute;
+        top: 205px;
+        left: 150px;
+        width: 80%;
+        height: 460px;
+        background-color:#ece9d8;
+    }
+
+    
+</style>
+<div class="cover">
+    @model Photo
+    <form asp-action="CreatePhoto" asp-controller="XP" method="Post" class="col-6">
+        <h2>Download</h2>
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control">
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ImgURL"></label>
+            <input asp-for="ImgURL" class="form-control">
+            <span class="text-danger" asp-validation-for="ImgURL"></span>
+        </div>
+        <button class="btn btn-primary mt-2">Download</button>
+    </form>
+</div>

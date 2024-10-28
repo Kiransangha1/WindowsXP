@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "loading..";
+    Layout = "_Empty";
+}
+
+<style>
+    body {
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1ebab8b-2b0b-4d87-a313-481d83d85afa/d9rjn08-f6a328b9-74f2-4fc1-9efe-d8e474713416.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QxZWJhYjhiLTJiMGItNGQ4Ny1hMzEzLTQ4MWQ4M2Q4NWFmYVwvZDlyam4wOC1mNmEzMjhiOS03NGYyLTRmYzEtOWVmZS1kOGU0NzQ3MTM0MTYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.whuZe9TB-dUJj-2CKhWHnKjRvm5MTaRPus7pUeIn4Tg');
+        background-size: cover;
+        background-position: center;
+        }
+    .click {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+</style>
+
+<a asp-controller="User" asp-action="LogAndReg" class="click"></a>

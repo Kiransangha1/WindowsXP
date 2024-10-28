@@ -1,0 +1,89 @@
+@{
+    ViewData["Title"] = "Registration Page";
+    Layout = "_Empty";
+}
+
+<style>
+    body {
+        background-image: url('https://res-academy.cache.wpscdn.com/images/seo_posts/20230930/71813a335d681c94d94416858152131d.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cover {
+        position: absolute;
+        top: 76px;
+        left: 0px;
+        width: 100%;
+        height: 645px;
+        background-color: #5173d7;
+    }
+
+    .cover2 {
+        position: absolute;
+        top: 295px;
+        left: 310px;
+        width: 54.9%;
+        height: 240px;
+        background-color: #f0ece0;
+    }
+
+    .color {
+        color: white;
+    }
+</style>
+<div class="cover">
+    <div>
+        <img src="https://web.suffieldacademy.org/ils/netadmin/docs/obsolete/windows_xp_install/docs/images/network_identification_add_user.png"
+            style="margin-left: 300px; margin-top: 50px; height: 500px; width: 800px;" />
+        <div class="cover2">
+            @model User
+            <form asp-action="RegisterUser" asp-controller="User" method="Post">
+                <div class="color">
+                    <div class="form-group" style="display: flex; color: black;">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group" style="display: flex; color: black;">
+                        <label asp-for="Image">Image</label>
+                        <select asp-for="Image" class="form-control" id="Image">
+                            <div>
+
+                                <option value="">--select--</option>
+                                <div class="image-options">
+                                    <option>🌼</option>
+                                    <option>🌻</option>
+                                    <option>🐱</option>
+                                    <option>🐶</option>
+                                    <option>🦋</option>
+                                    <option>♛</option>
+                                    <option>⚽</option>
+                                    <option>📀</option>
+                                </div>
+                        </select>
+                        <span class="text-danger" asp-validation-for="Image"></span>
+                    </div>
+
+                    <div class="form-group" style="display: flex; color: black;">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control">
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group" style="display: flex; color: black;">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control">
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-group" style="display: flex; color: black;">
+                        <label asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword" class="form-control">
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                    <button class="btn btn-primary mt-2">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
